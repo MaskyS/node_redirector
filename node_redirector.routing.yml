@@ -1,6 +1,6 @@
-node_redirector.form:
-    path: '/node-redirector-form'
- defaults:
+node_redirector_form:
+  path: '/node-redirector-form'
+  defaults:
     _title: 'Node Redirector'
     _form: '\Drupal\node_redirector\Form\NodeRedirectorForm'
   requirements:
