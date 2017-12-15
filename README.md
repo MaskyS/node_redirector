@@ -22,5 +22,5 @@ Current maintainers:
 This project has been sponsored by:
 
     GOOGLE CODE-IN Well not really, but if it weren't for GCI then I wouldn't have
- made it :P
+    made it :P
 
