@@ -1,6 +1,6 @@
 {
     "name": "drupal/node_redirector",
-    "description": "Node Rediretor redirects the user to the node page whose node ID has been entered.",
+    "description": "Node Rediretor redirects the user to the node page whose node ID has been input.",
     "type": "drupal-module",
     "author": "MaskyS",
     "license": "GPL-2.0+",

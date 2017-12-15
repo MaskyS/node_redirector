@@ -1,5 +1,5 @@
 name: Node Redirector
-description: Node Redirector redirects the user to the node page whose node ID has been entered.
+description: Node Redirector redirects the user to the node page whose node ID has been input.
 package: Custom
 
 type: module
