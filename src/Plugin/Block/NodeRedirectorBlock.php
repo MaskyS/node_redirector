@@ -1,10 +1,11 @@
 <?php
 
 namespace Drupal\node_redirector\Plugin\Block;
+
 use Drupal\Core\Block\BlockBase;
 
 /**
- * Provides the 'Node Redirector' Block
+ * Provides the 'Node Redirector' Block.
  *
  * @Block(
  *   id = "node_redirector",
@@ -12,6 +13,7 @@ use Drupal\Core\Block\BlockBase;
  * )
  */
 class NodeRedirectorBlock extends BlockBase {
+
   /**
    * {@inheritdoc}
    */
@@ -20,5 +22,5 @@ class NodeRedirectorBlock extends BlockBase {
     $renderArray['form'] = $builtForm;
     return $renderArray;
   }
-}
 
+}
