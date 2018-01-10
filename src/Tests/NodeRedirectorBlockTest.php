@@ -2,12 +2,14 @@
 
 namespace Drupal\node_redirector\Tests;
 
-use Drupal\simpletest\WebTestBase;
+use Drupal\Component\Utility\Unicode;
+use Drupal\simpletest\BrowserTestBase;
 
 /**
- * Tests the Node redirector module functionality.
+ * Tests the Node Redirector block.
+ * @group node_redirector
  */
-class NodeRedirectBlockTest extends WebTestBase {
+class NodeRedirectorBlockTest extends BrowserTestBase {
 
   /**
    * Modules to enable.
@@ -17,29 +19,21 @@ class NodeRedirectBlockTest extends WebTestBase {
   public static $modules = ['block', 'node_redirector'];
 
   /**
-   * {@inheritdoc}
-   */
-  protected function setUp() {
-    parent::setUp();
-    // Create and login user.
-    $admin_user = $this->drupalCreateUser([
-      'administer blocks', 'administer site configuration',
-      'access administration pages',
-    ]);
-    $this->drupalLogin($admin_user);
-  }
-
-  /**
    * Tests the functionality of the block.
    */
   public function testBlock() {
     $assert = $this->assertSession();
 
+    // Create user.
+    $web_user = $this->drupalCreateUser(['administer blocks']);
+    // Login the admin user.
+    $this->drupalLogin($web_user);
+
     // Get the theme name.
     $theme = $this->config('system.theme')->get('default');
 
     // Check that block is listed to be added.
-    $this->drupalGet('/admin/structure/block/library' . $theme, ['query' => ['region' => 'content']]);
+    $this->drupalGet('/admin/structure/block/library/' . $theme, ['query' => ['region' => 'content']]);
     $assert->pageTextContains('Node Redirector Block');
 
     // Configure and save the block.
