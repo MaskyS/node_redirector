@@ -49,7 +49,7 @@ class NodeRedirectorForm extends FormBase {
     if (!is_numeric($node)) {
       $form_state->setErrorByName('node', $this->t('Please enter a number; Node IDs are numeric.'));
     }
-    if (is_float($node) || strpos($node, ".")) {
+    if (!is_int($node)) {
       $form_state->setErrorByName('node', $this->t('In the future, Node IDs will support so you can use 3.14159265359 as URL for your science page, but until then, please enter an integer.'));
     }
   }
